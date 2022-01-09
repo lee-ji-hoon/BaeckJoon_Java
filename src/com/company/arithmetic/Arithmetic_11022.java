@@ -1,4 +1,4 @@
-package com.company.Arithmetic;
+package com.company.arithmetic;
 
 import java.io.BufferedReader;
 import java.io.IOException;

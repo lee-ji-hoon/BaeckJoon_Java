@@ -23,7 +23,7 @@ public class Java01_07 {
         return answer;
     }
 
-    /*public String solution(String str) {
+/*    public String solution(String str) {
         String answer = "YES";
         str = str.toLowerCase();
         int len = str.length();
@@ -32,12 +32,12 @@ public class Java01_07 {
         }
 
         return answer;
-    }*/
+    }
 
-    /*public String solution(String str) {
+    public String solution(String str) {
         String answer = "NO";
         String tmp = new StringBuilder(str).reverse().toString();
-        if (str.equalsIgnoreCase(tmp)) answer = "Yes"; // 단순 equals 하면 대소문자 구분때문에 오류가 난다 -> equalsIgnoreCase 사용하기
+        if (str.equalsIgnoreCase(tmp)) answer = "YES"; // 단순 equals 하면 대소문자 구분때문에 오류가 난다 -> equalsIgnoreCase 사용하기
 
         return answer;
     }*/

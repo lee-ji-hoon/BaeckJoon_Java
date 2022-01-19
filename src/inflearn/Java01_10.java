@@ -34,12 +34,12 @@ public class Java01_10 {
         return answer;*/
 
 
-        String[] answer = new String[s.length()];
-        int cnt = 100;
+        String[] answer = new String[s.length()]; // 빈 배열 등록
+        int cnt = 100; // 문자열의 길이 제한 생각하면서 넣기
 
         for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == t) {
-                answer[i] = String.valueOf(0);
+            if (s.charAt(i) == t) { // i번째 문자열이 입력한 문자 t와 같은지 확인
+                answer[i] = String.valueOf(0); // 같으면 0 입력 후 0으로 초기화
                 cnt = 0;
             } else {
                 cnt ++;
@@ -53,13 +53,13 @@ public class Java01_10 {
             if (s.charAt(i) == t) {
                 cnt = 0;
             } else {
-                if (Integer.parseInt(answer[i]) > cnt) {
+                if (Integer.parseInt(answer[i]) > cnt) { // 앞에 입력 된 배열의 i 번째 값과 현재 입력할려는 cnt 값 비교 후 더 작은 수 입력
                     answer[i] = String.valueOf(cnt);
                 }
             }
         }
 
-        String answerToString = String.join(" ", answer);
+        String answerToString = String.join(" ", answer); // 출력 형태를 배열 형태가 아닌 칸마다 공백으로 구분한다.
 
         return answerToString;
     }

@@ -11,10 +11,10 @@ public class Java01_08 {
 
         StringBuilder sb = new StringBuilder();
 
-        str = str.toUpperCase().replaceAll("[^A-Z]",""); // A-Z가 아니면
-        String tmp = new StringBuilder(str).reverse().toString();
+        str = str.toUpperCase().replaceAll("[^A-Z]",""); // A-Z가 아니면 빈 공간으로 만들어준다.
+        String tmp = new StringBuilder(str).reverse().toString(); // 반대에서부터 확인 하기 위한 str의 reverse 된 값 생성
 
-        if(str.equalsIgnoreCase(tmp)) {
+        if(str.equals(tmp)) { // str을 거꾸로 뒤집은 tmp와 같은지 확인
             answer = "YES";
             sb.append(answer);
         }

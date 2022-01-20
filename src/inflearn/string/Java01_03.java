@@ -1,4 +1,4 @@
-package inflearn;
+package inflearn.string;
 
         /*
         설명

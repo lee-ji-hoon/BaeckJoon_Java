@@ -12,7 +12,6 @@ public class Java_02_02 {
         int cnt = 1; // 맨 앞 학생은 무조건 보이므로 0이 아닌 1
 
         int max = temp[0]; // 맨 앞 학생을 제일 크다고 예시로 만들어둔다.
-
         for (int i = 1; i < N; i++) {
             if (temp[i] > max) { // max의 값 보다 temp[i] 값이 더 클 경우 선생님 기준에서 보이는 학생이다.
                 max = temp[i];

@@ -11,7 +11,8 @@ public class Java_01_12 {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < N; i++) {
-            /*StringBuilder binary = new StringBuilder();*/
+
+            // StringBuilder binary = new StringBuilder();
 
             // 7 개씩 저장 후
             // replace("입력값","변환값") 이용해서 이진수 값으로 변환

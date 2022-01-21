@@ -45,7 +45,6 @@ public class Java_02_10_2 {
             }
         }
 
-        System.out.println(Arrays.deepToString(arr));
         return answer;
     }
 

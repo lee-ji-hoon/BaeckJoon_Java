@@ -17,11 +17,13 @@ public class Java_02_08 {
 
     public ArrayList<Integer> solution(int N, int[] temp) {
 
-        ArrayList<Integer> answer = new ArrayList<>(N);
-        for (int i = 0; i <N ; i++) {
-            int cnt = 1;
-            for (int j = 0; j < N; j++) {
-                if(temp[i] < temp[j]) cnt++;
+        ArrayList<Integer> answer = new ArrayList<>(N); // 등수 입력 배열
+
+        // 0 ~ N(학생수) 각각 다 비교하기 위해서 이중 for문 사용한다.
+        for (int i = 0; i <N ; i++) { // 기준이 되는 학생
+            int cnt = 1; // 0등은 존재하지 않으므로 1로 초기화
+            for (int j = 0; j < N; j++) { // 비교가 되는 학생
+                if(temp[i] < temp[j]) cnt++; // 기준 < 비교 ? true -> cnt ++
             }
             answer.add(cnt);
         }
@@ -39,7 +41,7 @@ public class Java_02_08 {
 
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         for (int i = 0; i < N; i++) {
-            temp[i] = Integer.parseInt(st.nextToken());
+            temp[i] = Integer.parseInt(st.nextToken()); // 국어점수 입력
         }
 
         for (int x : T.solution(N, temp)) System.out.print(x + " ");

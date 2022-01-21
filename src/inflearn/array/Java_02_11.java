@@ -22,15 +22,13 @@ public class Java_02_11 {
         int answer = 0; // 리턴할 값
         int max = Integer.MIN_VALUE; // 최대값 찾기
 
-        for (int i = 0; i < N; i ++){
+        for (int i = 0; i < N; i ++){ // i 학생
 
             int cnt = 0;
+            for (int j = 0; j < N; j++) { // j 학생
+                for (int k = 0; k < 5; k++) { // 학년
+                    if (temp[i][k] == temp[j][k]) { // i학생의 반과 j학생의 반을 비교
 
-            for (int j = 0; j < N; j++) {
-
-                for (int k = 0; k < 5; k++) {
-
-                    if (temp[i][k] == temp[j][k]) {
                         cnt++;
                         break; // 동일한 학생이 들어갈 필요가 없으므로 break 해서 나간다.
                     }

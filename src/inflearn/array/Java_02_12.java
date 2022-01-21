@@ -3,56 +3,47 @@ package inflearn.array;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Java_02_12 {
 
     /**
      * 1. 학생 수 N명 M개의 줄로 이루어진 수학테스트 결과
      * 2. 멘토(선생) / 멘티(학생)
      *  2-1. A(멘토) B(멘티)가 될려면 M번의 테스트에서 모두 A학생의 등수가 더 높아야한다
-     *  2-2. A학생과 B학생을 첫번째 시험부터 비교해서 전부 다 A학생이 높으면 cnt ++ 그게 아닐경우 break 빠져나오기
-     *  2-3. 본인의 경우도 생각해야 하므로 = 하지 않기.
-     *  2-4. 1 ~ N -> N ~ 1 두 가지 경우
+     *  2-2. A학생과 B학생을 첫번째 시험부터 비교해서 높을 때 마다 cnt ++
+     *  2-3. cnt 값이 mathTestColumn 같다면 answer++ 증가 (멘토 멘티가 가능하다는 말)
+     * 3. 4중 for문
      */
 
     public int solution(int[][] temp, int student, int mathTestColumn) {
 
-        int cnt = 0;
+        int answer = 0;
+        for(int i = 1; i <= student; i ++) { // i 학생의 등수
+            for (int j = 1; j <= student; j++) { // j 학생의 등수
 
-        for (int i = 0; i < student-1; i++) {
-            for (int j = 0; j < mathTestColumn; j++) {
-                System.out.println("temp[j][i] ? temp[j+1][i-1] => " + temp[j][i] +" ? "+temp[j+1][i+1]);
-                System.out.println(i + " " + j);
-                if(temp[i][j] >= temp[i+1][j] ) break;
-                else {
-                    cnt ++;
+                int cnt = 0;
+                for (int h = 0; h < mathTestColumn; h++) {
+                    int pi = 0, pj = 0;
+
+                    for (int k = 0; k < student; k++) {
+                        if (temp[h][k] == i) pi = k; // i 학생의 등수 k만 바뀌므로 왼쪽 -> 오른쪽으로 가면서 확인
+                        if (temp[h][k] == j) pj = k; // j 학생의 등수
+                    }
+                    if (pi < pj) cnt++; // 멘토인 i 학생의 값이랑 j 학생의 값 비교
+                }
+                if (cnt == mathTestColumn) { // 한번이라도 i의 등수가 j의 등수보다 높지 않으면 cnt == mathTestColumn 이 false가 된다.
+                    answer++;
                 }
             }
         }
-
-/*
-        for (int i = student; i > 0; i--) {
-            for (int j = 0; j < mathTestColumn; j++) {
-                System.out.println("i + j = " + i + " + " + j);
-                System.out.println("temp[j][i] ? temp[j+1][i-1] => " + temp[j][i] +" ? "+temp[j+1][i-1]);
-                System.out.println(temp[0][4]);
-                System.out.println(temp[1][4]);
-                if(temp[j][i] >= temp[j+1][i] ) break;
-                else {
-                    cnt ++;
-                }
-            }
-        }
-*/
-
-        return cnt;
+        return answer;
     }
+
 
     public static void main(String[] args) throws IOException {
 
-        Main T = new Main();
+        Java_02_12 T = new Java_02_12();
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");

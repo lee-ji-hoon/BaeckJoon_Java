@@ -1,1 +1,2 @@
-# BaeckJoon_Java
+# 백준
+# 인프런

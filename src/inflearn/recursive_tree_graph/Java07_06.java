@@ -1,50 +1,44 @@
 package inflearn.recursive_tree_graph;
 
+import java.util.Scanner;
+
 /**
- * 1. lt, rt, data 로 이루어진 Node 생성
- * 2. root 값이 null 이면 종료
- * 3. DFS의 root.lt 호출
- * 4. DFS의 root.rt 호출
- * 5. 3~4 사이에 어디에 sout 해야 전위 중위 후위가 되는지 확인
- *
- * TODO
- * 1. 직접 그려가며 복습하기
+ * 1. DFS를 이용해서 풀기 위해 숫자가 주어지면 사용하는 것인지 아닌 것인지 판단
+ * 2. 임시배열 temp로 주어진 숫자가 사용하면 1 아니면 0으로 초기화
+ * 3. L == N + 1  * +1 인 이유는 3을 입력받았다고 했을 때 4번째까지 가서 확인해야 하기 때문
+ *  3-1. answer 초기화
+ *  3-2. 1 ~ N 까지 temp[i] == 1 즉 사용하는 칸이면 answeer += i
+ *  3-3. 공집합은 출력하지 않으므로 length() > 0 일때면 sout
  */
 
-class Node{
-    int data;
-    Node lt, rt; // 객체 주소 저장
-
-    public Node(int val) {
-        data = val;
-        lt = rt = null;
-    }
-}
-
 public class Java07_06 {
-    Node root;
 
-    public void DFS(Node root) {
-        if(root == null) return;
-        else {
-            // System.out.println("root.data = " + root.data); // 전위
-            DFS(root.lt);
-            // System.out.println("root.data = " + root.data); // 중위
-            DFS(root.rt);
-            System.out.println("root.data = " + root.data); // 후위
+    static int N;
+    static int[] temp;
 
+    public void DFS(int L) {
+        if (L == N + 1) {
+            String answer = "";
+            for (int i = 1; i <= N; i++) {
+                if(temp[i] == 1) answer += i + " ";
+            }
+            if (answer.length() > 0) System.out.println(answer);
+        }else{
+            temp[L] = 1;
+            DFS(L + 1);
+            temp[L] = 0;
+            DFS(L + 1);
         }
     }
 
     public static void main(String[] args) {
-        Java07_06 tree = new Java07_06();
-        tree.root = new Node(1);
-        tree.root.lt = new Node(2);
-        tree.root.rt = new Node(3);
-        tree.root.lt.lt = new Node(4);
-        tree.root.lt.rt = new Node(5);
-        tree.root.rt.lt = new Node(6);
-        tree.root.rt.rt = new Node(7);
-        tree.DFS(tree.root);
+        Java07_06 T = new Java07_06();
+
+        Scanner sc = new Scanner(System.in);
+
+        N = sc.nextInt();
+        temp = new int[N + 1];
+
+        T.DFS(1);
     }
 }

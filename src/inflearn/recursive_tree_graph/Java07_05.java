@@ -11,20 +11,20 @@ package inflearn.recursive_tree_graph;
  * 1. 직접 그려가며 복습하기
  */
 
-class Node{
+class DFS_Node {
     int data;
-    Node lt, rt; // 객체 주소 저장
+    DFS_Node lt, rt; // 객체 주소 저장
 
-    public Node(int val) {
+    public DFS_Node(int val) {
         data = val;
         lt = rt = null;
     }
 }
 
 public class Java07_05 {
-    Node root;
+    DFS_Node root;
 
-    public void DFS(Node root) {
+    public void DFS(DFS_Node root) {
         if(root == null) return;
         else {
             // System.out.println("root.data = " + root.data); // 전위
@@ -38,13 +38,13 @@ public class Java07_05 {
 
     public static void main(String[] args) {
         Java07_05 tree = new Java07_05();
-        tree.root = new Node(1);
-        tree.root.lt = new Node(2);
-        tree.root.rt = new Node(3);
-        tree.root.lt.lt = new Node(4);
-        tree.root.lt.rt = new Node(5);
-        tree.root.rt.lt = new Node(6);
-        tree.root.rt.rt = new Node(7);
+        tree.root = new DFS_Node(1);
+        tree.root.lt = new DFS_Node(2);
+        tree.root.rt = new DFS_Node(3);
+        tree.root.lt.lt = new DFS_Node(4);
+        tree.root.lt.rt = new DFS_Node(5);
+        tree.root.rt.lt = new DFS_Node(6);
+        tree.root.rt.rt = new DFS_Node(7);
         tree.DFS(tree.root);
     }
 }

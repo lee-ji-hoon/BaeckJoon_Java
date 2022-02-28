@@ -14,14 +14,14 @@ import java.util.*;
  * 5. else answer 출력
  */
 
-class Point{
+/*class Point{
     public int x, y;
 
     Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
-}
+}*/
 public class Java08_12 {
     static int[] dx = {-1, 0, 1, 0};
     static int[] dy = {0, 1, 0, -1};

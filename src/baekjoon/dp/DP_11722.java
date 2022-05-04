@@ -2,7 +2,7 @@ package baekjoon.dp;
 
 import java.util.Scanner;
 
-public class DP_11054 {
+public class DP_11722 {
 
     public static void main(String[] args) {
 

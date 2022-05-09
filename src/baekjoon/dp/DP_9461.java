@@ -11,19 +11,18 @@ public class DP_9461 {
 
         int N = sc.nextInt();
 
-        dp[0] = 0L;
         dp[1] = 1L;
         dp[2] = 1L;
         dp[3] = 1L;
 
-        while (N-- > 0){
+        while (N-- > 0){ // 입력 받은 값 0이 될때까지 테스트
             int T = sc.nextInt();
             System.out.println(solution(T));
         }
     }
 
     public static Long solution(int N) {
-        if (dp[N] == null) {
+        if (dp[N] == null) { // 이미 있는 경우는 탐색 안함 -> 메모이제이션
             dp[N] = solution(N - 2) + solution(N - 3);
         }
         return dp[N];

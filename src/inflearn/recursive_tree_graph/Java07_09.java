@@ -3,7 +3,7 @@ package inflearn.recursive_tree_graph;
 /**
  * 1. tree 동일하게 그려주기
  * 2. 최소거리 이므로 root의 lt,rt = null 일 때 return L
- * 3. 그 외의 경우는 Main.min 사용해서 DFS((L+1), root.lt), DFS((L+1), root.rt) 비교 후 값 return
+ * 3. 그 외의 경우는 Math.min 사용해서 DFS((L+1), root.lt), DFS((L+1), root.rt) 비교 후 값 return
  */
 
 class DFS_shortest {

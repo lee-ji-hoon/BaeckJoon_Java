@@ -1,4 +1,4 @@
-package baaarkingDog.chater01;
+package baaarkingDog.chapter01;
 
 import java.io.IOException;
 

@@ -22,7 +22,6 @@ public class 백준_1406_에디터 {
 
         for (int i = 0; i < M; i++) {
             String command = br.readLine();
-            char c = command.charAt(0);
             if (command.contains("P")) {
                 char t = command.charAt(2);
                 stL.push(t);

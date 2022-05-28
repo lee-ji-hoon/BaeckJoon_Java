@@ -35,10 +35,6 @@ public class 백준_10828_Stack {
         }
     }
 
-    void checkStackEmpty(Stack<Integer> stack) {
-        if(stack.empty()) System.out.println(-1);
-    }
-
     public static void main(String[] args) throws IOException {
 
         백준_10828_Stack main = new 백준_10828_Stack();

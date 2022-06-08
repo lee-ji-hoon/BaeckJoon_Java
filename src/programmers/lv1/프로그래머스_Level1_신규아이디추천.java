@@ -28,6 +28,14 @@ public class 프로그래머스_Level1_신규아이디추천 {
                 answer += answer.charAt(answer.length() - 1);
             }
         }
+        StringBuilder sb = new StringBuilder();
+
+        switch (sb.toString()){
+            case "A" : {
+                sb.append("A");
+                sb.delete(0, sb.length());
+            }
+        }
 
         return answer;
     }

@@ -14,21 +14,10 @@ class 프로그래머스_Level1_이상한문자만들기 {
                 sb.append(" ");
                 continue;
             }
-            if(count % 2 == 0) {
-                if(Character.isLowerCase(ch)) sb.append(String.valueOf(ch).toUpperCase());
-                else sb.append(ch);
-            } else {
-                if(Character.isUpperCase(ch)) sb.append(String.valueOf(ch).toLowerCase());
-                else sb.append(ch);
-            }
+            sb.append(count % 2 == 0 ? String.valueOf(ch).toUpperCase() : String.valueOf(ch).toLowerCase());
             count++;
         }
         answer = sb.toString();
         return answer;
-    }
-
-    public static void main(String[] args) {
-        프로그래머스_Level1_이상한문자만들기 s = new 프로그래머스_Level1_이상한문자만들기();
-        s.solution("try hello world");
     }
 }

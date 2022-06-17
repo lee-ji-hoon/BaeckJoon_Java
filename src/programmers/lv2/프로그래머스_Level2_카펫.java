@@ -8,17 +8,17 @@ public class 프로그래머스_Level2_카펫 {
 
         int maxLen = (int) Math.sqrt(yellow);
         int col = 0;
-        for (int row = 1; row <= maxLen; row++) {
-            if(yellow % row != 0) continue;
-            col = yellow / row;
-
-            if(((row+col) * 2 + 4) == brown){
-                answer[0] = Math.max(col, row) + 2;
-                answer[1] = Math.min(col, row) + 2;
-                break;
+        int sum = brown + yellow;
+        for (int row = 3; row <= maxLen; row++) {
+            if(yellow % row == 0) {
+                col = sum / row;
+                if((row - 2) * (col - 2) == yellow){
+                    answer[0] = col;
+                    answer[1] = row;
+                    break;
+                }
             }
         }
-        System.out.println(Arrays.toString(answer));
         return answer;
     }
 

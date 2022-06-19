@@ -1,4 +1,4 @@
-package inflearn.review;
+package inflearn.review.step1;
 
 import java.util.Scanner;
 

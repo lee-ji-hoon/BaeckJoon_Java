@@ -1,4 +1,4 @@
-package programmers.lv2;
+package programmers.lv2.kakao;
 
 class 프로그래머스_Level2_3차진수게임_카카오 {
 

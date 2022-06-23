@@ -1,4 +1,4 @@
-package programmers.lv2;
+package programmers.lv2.kakao;
 
 class 프로그래머스_Level2_K진수에서소수갯수구하기_카카오 {
     // n을 k진수로 바꾸기

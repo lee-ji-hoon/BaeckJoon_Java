@@ -1,6 +1,5 @@
 package programmers.lv2.kakao;
 
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 class 프로그래머스_Level2_주차요금계산_카카오 {
@@ -78,7 +77,7 @@ class 프로그래머스_Level2_주차요금계산_카카오 {
         return answer;
     }
 
-    public long findTime(String in, String out){
+    /*public long findTime(String in, String out){
         SimpleDateFormat s = new SimpleDateFormat("HH:mm");
         Date inTime = null;
         Date outTime = null;
@@ -89,6 +88,17 @@ class 프로그래머스_Level2_주차요금계산_카카오 {
 
         long diffMinutes = (outTime.getTime() - inTime.getTime()) / (60 * 1000);
         return diffMinutes;
+    }*/
+    public int findTime(String in, String out) {
+        int inMin = Integer.parseInt(in.split(":")[1]);
+        int inHour = Integer.parseInt(in.split(":")[0]);
+        int outMin = Integer.parseInt(out.split(":")[1]);
+        int outHour = Integer.parseInt(out.split(":")[0]);
+
+        int hour = outHour - inHour;
+        int minute = outMin - inMin;
+
+        return hour * 60 + minute;
     }
 
     public static void main(String[] args) {

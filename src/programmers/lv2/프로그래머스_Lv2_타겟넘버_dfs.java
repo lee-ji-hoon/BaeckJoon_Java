@@ -1,6 +1,6 @@
-package programmers.dfs;
+package programmers.lv2;
 
-public class Lv2_타겟넘버 {
+public class 프로그래머스_Lv2_타겟넘버_dfs {
     private static int answer;
     public int solution(int[] numbers, int target) {
         DFS(numbers, 0, target, 0);

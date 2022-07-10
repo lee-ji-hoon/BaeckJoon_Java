@@ -1,4 +1,4 @@
-package baaarkingDog.chapter09;
+package baaarkingDog.chapter09.연습문제;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -37,6 +37,7 @@ public class 백준_4178_불 {
             for (int j = 0; j < C; j++) {
                 String temp = String.valueOf(str.charAt(j));
                 miro[i][j] = temp;
+                // 1. 시작 위치가 여러개일 수도 있으니 J위치와 F위치 미리 Queue에 담기
                 if (temp.equals("J")) {
                     jihoonQ.add(new Node(i, j));
                     jihoon[i][j] = 1;
@@ -52,9 +53,9 @@ public class 백준_4178_불 {
                 }
             }
         }
-        // 1. 불에 대한 dfs 먼저 구하기 -> 퍼지는 시간
+        // 2. 불에 대한 dfs 먼저 구하기 -> 퍼지는 시간
         T.fireDFS(R, C, miro, fire, fireQ);
-        // 2. 지훈이에 대한 dfs 구하기 -> 탈출 시간
+        // 3. 지훈이에 대한 dfs 구하기 -> 탈출 시간
         System.out.println(T.jihoonDFS(R, C, miro, fire, jihoon, jihoonQ));
     }
 

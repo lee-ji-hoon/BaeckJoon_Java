@@ -1,4 +1,4 @@
-package baaarkingDog.chapter09;
+package baaarkingDog.chapter09.연습문제;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -23,6 +23,7 @@ public class 백준_2146_다리만들기 {
     private static final int[] dy = {0, 1, 0, -1};
 
     public static void main(String[] args) throws IOException {
+        백준_2146_다리만들기 T = new 백준_2146_다리만들기();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         int[][] isLand = new int[n][n];
@@ -45,17 +46,17 @@ public class 백준_2146_다리만들기 {
             }
         }
         // 2. 각 섬마다 그룹화를 한다.
-        setGrouping(isLand, group, n);
+        T.setGrouping(isLand, group, n);
         // 3. BFS를 통해 바다(-1)인 점들 섬에서부터 거리가 얼마나 되는지 계산하기
-        setLength(land, dist, group, n);
+        T.setLength(land, dist, group, n);
         // 4. 최단 거리 구하기
-        solution(group, dist, n);
+        T.solution(group, dist, n);
         for (int i = 0; i < n; i++) {
             System.out.println(Arrays.toString(dist[i]));
         }
     }
 
-    private static void setGrouping(int[][] isLand, int[][] grouping , int n) {
+    private void setGrouping(int[][] isLand, int[][] grouping , int n) {
         //  2-1) 첫 dfs에 해당하는 섬 그룹은 1 다음은 2  ~ N
         int groupNumber = 0;
         for (int i = 0; i < n; i++) {
@@ -87,7 +88,7 @@ public class 백준_2146_다리만들기 {
         }
     }
 
-    private static void setLength(Queue<Node> land, int[][] dist, int[][] group, int n) {
+    private void setLength(Queue<Node> land, int[][] dist, int[][] group, int n) {
         // 섬에서부터 다음 섬까지의 거리 1씩 증가하면서 구하기
         while (!land.isEmpty()) {
             Node cur = land.poll();
@@ -108,7 +109,7 @@ public class 백준_2146_다리만들기 {
         }
     }
 
-    private static void solution(int[][] group, int[][] dist, int n) {
+    private void solution(int[][] group, int[][] dist, int n) {
         int answer = Integer.MAX_VALUE;
         for (int x = 0; x < n; x++) {
             for (int y = 0; y < n; y++) {

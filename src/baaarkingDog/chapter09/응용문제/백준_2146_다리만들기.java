@@ -51,9 +51,6 @@ public class 백준_2146_다리만들기 {
         T.setLength(land, dist, group, n);
         // 4. 최단 거리 구하기
         T.solution(group, dist, n);
-        for (int i = 0; i < n; i++) {
-            System.out.println(Arrays.toString(dist[i]));
-        }
     }
 
     private void setGrouping(int[][] isLand, int[][] grouping , int n) {

@@ -17,14 +17,6 @@ public class 백준_2146_다리만들기 {
             this.x = x;
             this.y = y;
         }
-
-        @Override
-        public String toString() {
-            return "Node{" +
-                    "x=" + x +
-                    ", y=" + y +
-                    '}';
-        }
     }
 
     private static final int[] dx = {1, 0, -1, 0};

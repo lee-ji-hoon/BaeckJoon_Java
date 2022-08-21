@@ -8,12 +8,3 @@
 [프로그래머스 1레벨 풀이](https://github.com/lee-ji-hoon/JavaAlgorithmn/tree/master/src/programmers/lv1)  
 [프로그래머스 2레벨 풀이](https://github.com/lee-ji-hoon/JavaAlgorithmn/tree/master/src/programmers/lv2)  
 [프로그래머스 3레벨 풀이](https://github.com/lee-ji-hoon/JavaAlgorithmn/tree/master/src/programmers/lv3)
-# 바킹독 알고리즘 스터디
-[문제풀이](https://github.com/lee-ji-hoon/JavaAlgorithmn/tree/master/src/baaarkingDog)
-### 기간 
-2022 07 14 ~ 
-
-### 방법
-[강의](https://www.youtube.com/watch?v=ftOmGdm95XI&list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&index=10&ab_channel=BaaarkingDog) 시청 후 각자 정리
-- 매주 목, 일요일 마다 1장씩 공부하고 설명하기
-- DFS 강의 부터 시작
